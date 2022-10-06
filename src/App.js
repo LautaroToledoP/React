@@ -1,14 +1,15 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/Navbar/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
 
-    <div>
-      <header>
-        <Navbar/>
-      </header>
+    <div className="App">
+        <Navbar />
+      <ItemListContainer greeting={'Bienvenido/a'}/>
+      
     </div>
 
   );
