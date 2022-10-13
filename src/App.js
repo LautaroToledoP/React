@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/Navbar/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Counter from './components/Counter/Counter';
 
 function App() {
+
+
+  const handleOnAdd = () => {
+    console.log("se agrego al carrito")
+  }
+  
+  
+  
   return (
 
     <div className="App">
         <Navbar />
-      <ItemListContainer greeting={'Bienvenido/a'}/>
+      <ItemListContainer />
+      <Counter onAdd={handleOnAdd}/>
       
     </div>
 
