@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Counter from './components/Counter/Counter';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
-
-  const handleOnAdd = () => {
-    console.log("se agrego al carrito")
-  }
-  
   
   
   return (
@@ -18,7 +13,8 @@ function App() {
     <div className="App">
         <Navbar />
       <ItemListContainer />
-      <Counter onAdd={handleOnAdd}/>
+      <ItemDetailContainer />
+      
       
     </div>
 

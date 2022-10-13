@@ -31,3 +31,23 @@ export const getProducts = () => {
 })      
 }
 
+const product = [
+    {
+        id : '4',
+        name : 'hunter x hunter',
+        price: '1500',
+        category: 'manga',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_719528-MLA49292408396_032022-O.webp',
+        stock: '19',
+        description: 'sinopsis'
+    }
+]
+
+export const getProductById = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(product)
+        }, 4000)
+})      
+}
+
