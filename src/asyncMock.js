@@ -32,7 +32,10 @@ export const getProducts = () => {
 }
 
 const product = [
+
     {
+        
+    
         id : '4',
         name : 'hunter x hunter',
         price: '1500',
@@ -47,7 +50,7 @@ export const getProductById = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(product)
-        }, 4000)
+        }, 2000)
 })      
 }
 
