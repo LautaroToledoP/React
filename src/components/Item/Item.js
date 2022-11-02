@@ -1,7 +1,11 @@
 import { getProducts } from "../../asyncMock"
 import { Link } from 'react-router-dom'
+import { useContext } from "react"
+
 
 const Item = ({ img, name, category, price, id }) => {
+
+
     return (
         <div>
             <img src={img} alt={name} style={{width: 175}} />

@@ -4,7 +4,7 @@ import ItemListDetail from '../ItemListDetail/ItemListDetail'
 import { useParams } from 'react-router-dom'
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setCart}) => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 

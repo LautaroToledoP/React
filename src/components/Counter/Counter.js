@@ -1,30 +1,26 @@
 import {useState} from 'react'
 
-const Counter = ({onAdd}) => {
-    const [result, setResult] = useState(0)
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(0)
+const Counter = ({stock = 0, initial = 1, onAdd}) => {
+    const [quantity, setQuantity] = useState(initial)
 
-
-    const sacar = () => {
-        setResult(value1 - value2)
+    const increment = () => {
+        if(quantity < stock) {
+            setQuantity(quantity + 1)
+        }
     }
 
 
-
-    const agregar = () => {
-        setResult(parseInt(value1) + parseInt(value2))
+    const decrement = () => {
+        if(quantity > 1) {
+            setQuantity(quantity - 1)
+        }
     }
-
-
     return (
         <div>
-            <h1>{result}</h1>
-            <input value={value1} onChange={(e) => setValue1(e.target.value)}/>
-            <input value={value2} onChange={(e) => setValue2(e.target.value)}/>
-            <button onClick={sacar}>sacar del carrito</button>
-            <button onClick={agregar}>agregar al carrito</button>
-            <button onClick={onAdd}>aplicar al carrito</button>
+            <h2>{quantity}</h2>
+            <button onClick={decrement}>sacar del carrito</button>
+            <button onClick={increment}>agregar al carrito</button>
+            <button onClick={() => onAdd(quantity)}>aplicar al carrito</button>
         </div>
     )
 }

@@ -1,9 +1,17 @@
 import { getProductById } from "../../asyncMock"
 import Counter from "../Counter/Counter"
+import { useContext } from "react"
+import { CartContext } from '../../context/CartContext'
 
-const ItemDetail = ({ img, name, category, price }) => {
-    const handleOnAdd = () => {
-        console.log("se agrego al carrito")
+const ItemDetail = ({ id, img, name, category, price, stock }) => {
+
+    const {addItem} = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        const productAdd = {
+            id, name, price, quantity
+        }
+        addItem( productAdd )
       }
 
     return (
@@ -13,7 +21,7 @@ const ItemDetail = ({ img, name, category, price }) => {
             <h3>{category}</h3>
             <p>{price}</p>
             <h2>Sinopsis: bla bla bla</h2>
-            <Counter onAdd={handleOnAdd}/>
+            <Counter onAdd={handleOnAdd} stock={stock}/>
            </div>
     )
 }
