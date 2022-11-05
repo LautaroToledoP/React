@@ -15,17 +15,17 @@ const ItemDetailContainer = ({setCart}) => {
 
     useEffect(() => {
 
-        const docRef = doc(reference, 'products', productId)
+         const docRef = doc(reference, 'products', productId)
 
-        getDoc(docRef).then(response => {
-            const data = response.data()
-            const productAdapted = {id: response.id, ...data}
-            setProduct(productAdapted)
-        }).finally(() => {
+         getDoc(docRef).then(response => {
+             const data = response.data()
+             const productAdapted = {id: response.id, ...data}
+             setProduct(productAdapted)
+         }).finally(() => {
             setLoading(false)
         })
-    }, [productId])
-//         setLoading(true)
+     }, [productId])
+//          setLoading(true)
 
 //        const ref = reference
 //        const productCollection = ref.collection('1')
@@ -39,12 +39,12 @@ const ItemDetailContainer = ({setCart}) => {
 //         }
 //         console.log('product found!')
 //         setProduct({id: doc.id, ...doc.data() })
-//         console.log(`product ${product.id}`)
+//          console.log(`product ${product.id}`)
 //        }).catch((error) => {console.log('error searching products', error)
-//     }).finally(() => {
-//         setLoading(false)
+//      }).finally(() => {
+//          setLoading(false)
 //     })
-//   }, [productId])
+//    }, [productId])
   
     if(loading) {
         return <h1>Cargando detalle...</h1>
