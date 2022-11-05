@@ -1,7 +1,7 @@
-import { getProductById } from "../../asyncMock"
 import Counter from "../Counter/Counter"
 import { useContext } from "react"
 import { CartContext } from '../../context/CartContext'
+
 
 const ItemDetail = ({ id, img, name, category, price, stock }) => {
 
@@ -13,6 +13,7 @@ const ItemDetail = ({ id, img, name, category, price, stock }) => {
         }
         addItem( productAdd )
       }
+      
 
     return (
         <div>

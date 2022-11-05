@@ -12,13 +12,16 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Mangas Disponibles</a>
+          <Link to={'/'} className="nav-link active" aria-current="page">Mangas Disponibles</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Mangas Populares</a>
+          <Link to={'/category/shonen'} className="nav-link">Shonen</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">Contactanos</a>
+          <Link to={'/category/seinen'} className="nav-link">Seinen</Link>
+        </li>
+        <li className="nav-item">
+          <Link to={'/'} className="nav-link">Contactanos</Link>
         </li>
       </ul>
       <form className="d-flex">
