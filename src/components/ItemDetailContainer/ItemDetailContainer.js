@@ -5,7 +5,8 @@ import { getDoc, doc, collection } from 'firebase/firestore'
 import { reference } from '../../services/firebase'
 
 
-const ItemDetailContainer = ({setCart}) => {
+
+const ItemDetailContainer = () => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -55,6 +56,7 @@ const ItemDetailContainer = ({setCart}) => {
         <div>
             <h1>Detalle del producto</h1>
             <ItemListDetail product={product}/>
+            {/* <ItemListDetail product={product}/> */}
         </div>
     )
 
