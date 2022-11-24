@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react'
-import ItemListDetail from '../ItemListDetail/ItemListDetail'
-import { useParams } from 'react-router-dom'
-import { getDoc, doc, collection } from 'firebase/firestore'
+import { useParams, useNavigate } from 'react-router-dom'
+import { getDoc, doc} from 'firebase/firestore'
 import { reference } from '../../services/firebase'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({}) => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
 
     const { productId } = useParams()
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        document.title = loading ? 'Cargando...' : 'Detalle del producto'
+    })
     
 
     useEffect(() => {
@@ -55,8 +61,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <h1>Detalle del producto</h1>
-            <ItemListDetail product={product}/>
-            {/* <ItemListDetail product={product}/> */}
+            <ItemDetail {...product}/>
         </div>
     )
 

@@ -1,6 +1,4 @@
-import { getProducts } from "../../asyncMock"
 import { Link } from 'react-router-dom'
-import { useContext } from "react"
 
 
 const Item = ({ img, name, category, price, id }) => {

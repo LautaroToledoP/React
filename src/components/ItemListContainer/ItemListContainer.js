@@ -5,11 +5,15 @@ import { useParams } from 'react-router-dom'
 import { getDocs, collection, query , where } from 'firebase/firestore'
 import { reference } from '../../services/firebase'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({}) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
   const { categoryId } = useParams()
+
+  useEffect(() => {
+    document.title = loading ? 'Cargando...' : 'Productos disponibles'
+})
 
   useEffect(() => {
 
